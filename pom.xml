@@ -59,7 +59,9 @@
         <dependency>
             <groupId>org.inventivetalent</groupId>
             <artifactId>hologramapi</artifactId>
+            <scope>system</scope>
             <version>1.4.0</version>
+            <systemPath>${basedir}/libs/HologramAPI.jar</systemPath>
         </dependency>
 
         <dependency>
