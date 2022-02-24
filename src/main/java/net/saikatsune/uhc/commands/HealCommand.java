@@ -27,16 +27,16 @@ public class HealCommand implements CommandExecutor {
                     for (Player allPlayers : Bukkit.getOnlinePlayers()) {
                         if(game.getPlayers().contains(allPlayers.getUniqueId())) {
                             allPlayers.setHealth(20);
-                            allPlayers.sendMessage(prefix + sColor + "You have been healed by " + mColor + player.getName() + sColor + "!");
+                            allPlayers.sendMessage(sColor + "You have been healed by " + mColor + player.getName() + sColor + "!");
                         }
                     }
-                    player.sendMessage(prefix + mColor + "You have healed all players!");
+                    player.sendMessage(mColor + "You have healed all players!");
                 } else {
                     Player target = Bukkit.getPlayer(args[0]);
                     if(target != null) {
                         target.setHealth(20);
-                        target.sendMessage(prefix + sColor + "You have been healed by " + mColor + player.getName() + sColor + "!");
-                        player.sendMessage(prefix + sColor + "You have healed " + mColor + target.getName() + sColor + "!");
+                        target.sendMessage(sColor + "You have been healed by " + mColor + player.getName() + sColor + "!");
+                        player.sendMessage(sColor + "You have healed " + mColor + target.getName() + sColor + "!");
                     } else {
                         player.sendMessage(prefix + ChatColor.RED + args[0] + " is currently offline!");
                     }
