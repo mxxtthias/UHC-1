@@ -24,16 +24,16 @@ public class StarterFoodCommand implements CommandExecutor {
                 if(args.length == 1) {
                     if(game.getFileHandler().isNumeric(args[0])) {
                         game.getConfigManager().setStarterFood(Integer.parseInt(args[0]));
-                        Bukkit.broadcastMessage(prefix + mColor + "Starter Food " + sColor + "has changed to " + mColor +
-                                args[0] + sColor + " Steaks!");
+                        Bukkit.broadcastMessage(mColor + "Starter Food " + sColor + "has changed to " + mColor +
+                                args[0] + sColor + " Steaks.");
                     } else {
-                        player.sendMessage(prefix + ChatColor.RED + "The argument has to be numeric!");
+                        player.sendMessage(ChatColor.RED + "The argument has to be numeric!");
                     }
                 } else {
                     player.sendMessage(ChatColor.RED + "Usage: /starterfood (number)");
                 }
             } else {
-                player.sendMessage(prefix + ChatColor.RED + "The game has already started!");
+                player.sendMessage(ChatColor.RED + "The game has already started.");
             }
         }
         return false;
