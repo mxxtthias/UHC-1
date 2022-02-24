@@ -23,23 +23,23 @@ public class TimeCommand implements CommandExecutor {
                 if(args[0].equalsIgnoreCase("healtime")) {
                     if(game.getFileHandler().isNumeric(args[1])) {
                         game.getConfigManager().setFinalHeal(Integer.parseInt(args[1]));
-                        Bukkit.broadcastMessage(prefix + mColor + "Final Heal" + sColor + " has changed to " + mColor + args[1] + sColor + " minutes!");
+                        Bukkit.broadcastMessage(mColor + "Final Heal" + sColor + " has changed to " + mColor + args[1] + sColor + " minutes.");
                     } else {
-                        player.sendMessage(prefix + ChatColor.RED + "The argument has to be numeric!");
+                        player.sendMessage(ChatColor.RED + "The argument has to be numeric!");
                     }
                 } else if(args[0].equalsIgnoreCase("gracetime")) {
                     if(game.getFileHandler().isNumeric(args[1])) {
                         game.getConfigManager().setGraceTime(Integer.parseInt(args[1]));
-                        Bukkit.broadcastMessage(prefix + mColor + "Grace Time" + sColor + " has changed to " + mColor + args[1] + sColor + " minutes!");
+                        Bukkit.broadcastMessage(mColor + "Grace Time" + sColor + " has changed to " + mColor + args[1] + sColor + " minutes.");
                     } else {
-                        player.sendMessage(prefix + ChatColor.RED + "The argument has to be numeric!");
+                        player.sendMessage(ChatColor.RED + "The argument has to be numeric!");
                     }
                 } else if(args[0].equalsIgnoreCase("bordertime")) {
                     if(game.getFileHandler().isNumeric(args[1])) {
                         game.getConfigManager().setBorderTime(Integer.parseInt(args[1]));
-                        Bukkit.broadcastMessage(prefix + mColor + "First Shrink" + sColor + " has changed to " + mColor + args[1] + sColor + " minutes!");
+                        Bukkit.broadcastMessage(mColor + "First Shrink" + sColor + " has changed to " + mColor + args[1] + sColor + " minutes.");
                     } else {
-                        player.sendMessage(prefix + ChatColor.RED + "The argument has to be numeric!");
+                        player.sendMessage(ChatColor.RED + "The argument has to be numeric!");
                     }
                 }
             } else {
