@@ -62,7 +62,7 @@ public class SetupCommand implements CommandExecutor, Listener {
                         event.setCancelled(true);
                         player.closeInventory();
                         game.getLocationManager().setLocation("Spawn-Location", player.getLocation());
-                        player.sendMessage(prefix + sColor + "You successfully" + mColor + " set " + sColor + "the " + mColor + "Spawn-Location" + sColor + "!");
+                        player.sendMessage(sColor + "You successfully" + mColor + " set " + sColor + "the " + mColor + "Spawn-Location" + sColor + ".");
                     }
                 }
             } else if(event.getClickedInventory().getName().equals(mColor + "Game Setup")) {
