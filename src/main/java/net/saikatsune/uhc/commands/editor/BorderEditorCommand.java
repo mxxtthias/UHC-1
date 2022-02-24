@@ -71,7 +71,7 @@ public class BorderEditorCommand implements CommandExecutor, Listener {
                                 game.getWorldManager().shrinkBorder("uhc_world", 500);
                                 game.getWorldManager().shrinkBorder("uhc_nether", 500);
                             }
-                            Bukkit.broadcastMessage(prefix + mColor + "Border Size " + sColor + "has changed to " + mColor + game.getConfigManager().getBorderSize() + sColor + "!");
+                            Bukkit.broadcastMessage(mColor + "Border Size " + sColor + "has changed to " + mColor + game.getConfigManager().getBorderSize() + sColor + ".");
                         }
                     } else if(event.getCurrentItem().getType() == Material.STAINED_GLASS_PANE) {
                         event.setCancelled(true);
