@@ -23,10 +23,10 @@ public class MuteChatCommand implements CommandExecutor {
             if(sender instanceof Player) {
                 if(game.isChatMuted()) {
                     game.setChatMuted(false);
-                    Bukkit.broadcastMessage(prefix + mColor + "Global Chat " + sColor + "has been " + ChatColor.GREEN + "enabled" + sColor + "!");
+                    Bukkit.broadcastMessage(mColor + "Global Chat " + sColor + "has been " + ChatColor.GREEN + "enabled" + sColor + ".");
                 } else {
                     game.setChatMuted(true);
-                    Bukkit.broadcastMessage(prefix + mColor + "Global Chat " + sColor + "has been " + ChatColor.RED + "disabled" + sColor + "!");
+                    Bukkit.broadcastMessage(mColor + "Global Chat " + sColor + "has been " + ChatColor.RED + "disabled" + sColor + ".");
                 }
             }
         }
