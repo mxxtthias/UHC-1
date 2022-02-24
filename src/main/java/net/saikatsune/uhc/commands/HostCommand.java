@@ -23,14 +23,14 @@ public class HostCommand implements CommandExecutor {
                     if(!game.getGameHost().contains(player.getName())) {
                         game.setGameHost(player.getName());
 
-                        player.sendMessage(prefix + ChatColor.GREEN + "You are now the host of the game.");
+                        player.sendMessage(ChatColor.GREEN + "You are now the host of the game.");
                     } else {
                         game.setGameHost("None");
 
-                        player.sendMessage(prefix + ChatColor.RED + "You are no longer the host of the game.");
+                        player.sendMessage(ChatColor.RED + "You are no longer the host of the game.");
                     }
                 } else {
-                    player.sendMessage(prefix + ChatColor.RED + game.getGameHost() + " is already the host of the game!");
+                    player.sendMessage(ChatColor.RED + game.getGameHost() + " is already the host of the game.");
                 }
             }
         }
