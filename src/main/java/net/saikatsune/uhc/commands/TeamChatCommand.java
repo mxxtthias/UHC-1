@@ -38,15 +38,15 @@ public class TeamChatCommand implements CommandExecutor {
                                             stringBuilder.append(strings).append(" ");
                                         }
 
-                                        allPlayers.sendMessage(prefix + mColor + "[TC] " + player.getName() + ": " + sColor + stringBuilder);
+                                        allPlayers.sendMessage(mColor + "[Team Chat] " + player.getName() + ": " + sColor + stringBuilder);
                                     }
                                 }
                             }
                         } else {
-                            player.sendMessage(prefix + ChatColor.RED + "You are not in a team!");
+                            player.sendMessage(ChatColor.RED + "You are not in a team.");
                         }
                     } else {
-                        player.sendMessage(prefix + ChatColor.RED + "Team Management is currently disabled!");
+                        player.sendMessage(ChatColor.RED + "Team Management is currently disabled.");
                     }
                 } else {
                     player.sendMessage(ChatColor.RED + "Usage: /teamchat (message)");
