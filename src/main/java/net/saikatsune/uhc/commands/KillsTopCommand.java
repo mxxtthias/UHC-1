@@ -48,7 +48,7 @@ public class KillsTopCommand implements CommandExecutor {
                 }
                 player.sendMessage("§8§m----------------------------");
             } else {
-                player.sendMessage(prefix + ChatColor.RED + "There is currently no game running.");
+                player.sendMessage(ChatColor.RED + "There is currently no game running.");
             }
         }
         return false;
