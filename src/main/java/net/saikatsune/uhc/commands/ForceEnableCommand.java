@@ -21,7 +21,7 @@ public class ForceEnableCommand implements CommandExecutor {
                             if(game.isInGrace()) {
                                 game.getGameManager().endGracePeriod();
                             } else {
-                                sender.sendMessage(game.getPrefix() + ChatColor.RED +
+                                sender.sendMessage(ChatColor.RED +
                                         "Grace period has already ended.");
                             }
                         } else if(args[0].equalsIgnoreCase("heal")) {
@@ -29,21 +29,21 @@ public class ForceEnableCommand implements CommandExecutor {
                                 game.getGameManager().executeFinalHeal();
                                 game.setFinalHealHappened(true);
                             } else {
-                                sender.sendMessage(game.getPrefix() + ChatColor.RED +
+                                sender.sendMessage(ChatColor.RED +
                                         "Final heal already happened.");
-                                sender.sendMessage(game.getPrefix() + ChatColor.RED +
+                                sender.sendMessage(ChatColor.RED +
                                         "If you want to heal all players use /heal all.");
                             }
                         } else if (args[0].equalsIgnoreCase("butcher")) {
                             game.getButcherTask().run();
-                            sender.sendMessage(game.getPrefix() + ChatColor.YELLOW + "Successfully executed the butcher task.");
+                            sender.sendMessage(ChatColor.YELLOW + "Successfully executed the butcher task.");
                         } else {
                             sender.sendMessage(ChatColor.RED + "Usage: /forceenable pvp");
                             sender.sendMessage(ChatColor.RED + "Usage: /forceenable heal");
                             sender.sendMessage(ChatColor.RED + "Usage: /forceenable butcher");
                         }
                     } else {
-                        sender.sendMessage(game.getPrefix() + ChatColor.RED + "There is currently no game running!");
+                        sender.sendMessage(ChatColor.RED + "There is currently no game running.");
                     }
                 } else {
                     sender.sendMessage(ChatColor.RED + "Usage: /forceenable pvp");
