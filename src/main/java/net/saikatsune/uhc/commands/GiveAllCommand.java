@@ -33,18 +33,18 @@ public class GiveAllCommand implements CommandExecutor {
                                 if(game.getPlayers().contains(allPlayers.getUniqueId())) {
                                     allPlayers.getInventory().addItem(new ItemStack(Material.getMaterial(args[0]),
                                             Integer.parseInt(args[1])));
-                                    allPlayers.sendMessage(prefix + sColor + "You received " + mColor + args[1] + "x " +
-                                            args[0] + sColor + "!");
+                                    allPlayers.sendMessage(sColor + "You received " + mColor + args[1] + "x " +
+                                            args[0] + sColor + ".");
                                 }
                             }
                             game.getGameManager().playSound();
-                            player.sendMessage(prefix + sColor + "You gave every player " + mColor + args[1] + "x " +
-                                    args[0] + sColor + "!");
+                            player.sendMessage(sColor + "You gave every player " + mColor + args[1] + "x " +
+                                    args[0] + sColor + ".");
                         } else {
-                            player.sendMessage(prefix + ChatColor.RED + "The argument has to be numeric!");
+                            player.sendMessage(ChatColor.RED + "The argument has to be numeric!");
                         }
                     } else {
-                        player.sendMessage(prefix + ChatColor.RED + "The argument has to be an item!");
+                        player.sendMessage(ChatColor.RED + "The argument has to be an item!");
                     }
                 } else {
                     player.sendMessage(ChatColor.RED + "Usage: /giveall (item) (number)");
