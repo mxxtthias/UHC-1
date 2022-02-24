@@ -41,10 +41,10 @@ public class DisqualifyCommand implements CommandExecutor, Listener {
                     if(game.getGameHost().equalsIgnoreCase(player.getName())) {
                         game.getInventoryHandler().handleDisqualifyInventory(player);
                     } else {
-                        player.sendMessage(prefix + ChatColor.RED + "You have to be the host of the game to execute this command.");
+                        player.sendMessage(ChatColor.RED + "You have to be the host of the game to execute this command.");
                     }
                 } else {
-                    player.sendMessage(prefix + ChatColor.RED + "There is currently no game running.");
+                    player.sendMessage(ChatColor.RED + "There is currently no game running.");
                 }
             }
         }
