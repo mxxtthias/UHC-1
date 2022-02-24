@@ -28,10 +28,10 @@ public class LeaderboardsCommand implements CommandExecutor, Listener {
                         Bukkit.getScheduler().runTaskAsynchronously(game, () ->
                                 game.getInventoryHandler().handleLeaderboardsInventory(player));
                     } else {
-                        player.sendMessage(prefix + ChatColor.RED + "Stats are currently disabled.");
+                        player.sendMessage(ChatColor.RED + "Stats are currently disabled.");
                     }
                 } else {
-                    player.sendMessage(prefix + ChatColor.RED + "This command is not accessible for players yet.");
+                    player.sendMessage(ChatColor.RED + "This command is not accessible for players yet.");
                 }
             }
         }
