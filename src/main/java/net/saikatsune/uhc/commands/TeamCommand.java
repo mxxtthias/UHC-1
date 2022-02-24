@@ -50,12 +50,12 @@ public class TeamCommand implements CommandExecutor {
                                     game.getGameManager().setTeamGame(false);
                                     game.getGameType().put("GameType", GameType.SOLO);
                                     game.setTeamSizeInString("FFA");
-                                    Bukkit.broadcastMessage(prefix + mColor + "Team Management " + sColor + "has been " + ChatColor.RED + "disabled" + sColor + "!");
+                                    Bukkit.broadcastMessage(mColor + "Team Management " + sColor + "has been " + ChatColor.RED + "disabled" + sColor + ".");
                                 } else {
                                     game.getGameManager().setTeamGame(true);
                                     game.getGameType().put("GameType", GameType.TEAMS);
                                     game.setTeamSizeInString("To" + game.getTeamManager().getTeamSize());
-                                    Bukkit.broadcastMessage(prefix + mColor + "Team Management " + sColor + "has been " + ChatColor.GREEN + "enabled" + sColor + "!");
+                                    Bukkit.broadcastMessage(mColor + "Team Management " + sColor + "has been " + ChatColor.GREEN + "enabled" + sColor + ".");
                                 }
                             } else {
                                 player.sendMessage(prefix + ChatColor.RED + "The game has already started!");
@@ -67,13 +67,13 @@ public class TeamCommand implements CommandExecutor {
                                 if (game.getTeamNumber().get(player.getUniqueId()) == -1) {
                                     game.getTeamManager().createTeam(player.getUniqueId());
                                 } else {
-                                    player.sendMessage(prefix + ChatColor.RED + "You are already in a team!");
+                                    player.sendMessage(ChatColor.RED + "You are already in a team.");
                                 }
                             } else {
-                                player.sendMessage(prefix + ChatColor.RED + "The game has already started!");
+                                player.sendMessage(ChatColor.RED + "The game has already started.");
                             }
                         } else {
-                            player.sendMessage(prefix + ChatColor.RED + "Team Management is currently disabled!");
+                            player.sendMessage(ChatColor.RED + "Team Management is currently disabled.");
                         }
                     } else if (args[0].equalsIgnoreCase("leave")) {
                         if (game.getGameManager().isTeamGame()) {
@@ -81,13 +81,13 @@ public class TeamCommand implements CommandExecutor {
                                 if (game.getTeamNumber().get(player.getUniqueId()) != -1) {
                                     game.getTeamManager().removePlayerFromTeam(game.getTeamNumber().get(player.getUniqueId()), player.getUniqueId());
                                 } else {
-                                    player.sendMessage(prefix + ChatColor.RED + "You are not in a team!");
+                                    player.sendMessage(ChatColor.RED + "You are not in a team.");
                                 }
                             } else {
-                                player.sendMessage(prefix + ChatColor.RED + "The game has already started!");
+                                player.sendMessage(ChatColor.RED + "The game has already started.");
                             }
                         } else {
-                            player.sendMessage(prefix + ChatColor.RED + "Team Management is currently disabled!");
+                            player.sendMessage(ChatColor.RED + "Team Management is currently disabled.");
                         }
                     }
                 } else if (args.length == 2) {
@@ -100,18 +100,18 @@ public class TeamCommand implements CommandExecutor {
                                         if (game.getGameManager().isTeamGame()) {
                                             game.getTeamManager().setTeamSize(Integer.parseInt(args[1]));
                                             game.setTeamSizeInString("To" + game.getTeamManager().getTeamSize());
-                                            Bukkit.broadcastMessage(prefix + sColor + "The team size has changed to " + mColor + args[1] + sColor + "!");
+                                            Bukkit.broadcastMessage(sColor + "The team size has changed to " + mColor + args[1] + sColor + ".");
                                         } else {
-                                            player.sendMessage(prefix + ChatColor.RED + "Team Management is currently disabled!");
+                                            player.sendMessage(ChatColor.RED + "Team Management is currently disabled.");
                                         }
                                     } else {
-                                        player.sendMessage(prefix + ChatColor.RED + "The team size has to be higher than 1!");
+                                        player.sendMessage(ChatColor.RED + "The team size has to be higher than 1.");
                                     }
                                 } else {
-                                    player.sendMessage(prefix + ChatColor.RED + "The argument has to be numeric!");
+                                    player.sendMessage(ChatColor.RED + "The argument has to be numeric.");
                                 }
                             } else {
-                                player.sendMessage(prefix + ChatColor.RED + "The game has already started!");
+                                player.sendMessage(ChatColor.RED + "The game has already started.");
                             }
                         }
                     } else if(args[0].equalsIgnoreCase("invite")) {
@@ -128,9 +128,9 @@ public class TeamCommand implements CommandExecutor {
                                                         if(game.getTeamInvitation().get(player) != target) {
                                                             game.getTeamInvitation().put(player, target);
                                                             game.getTeamInvitation().put(target, player);
-                                                            player.sendMessage(prefix + sColor + "You have sent an invitation to " + mColor + target.getName() + sColor + "!");
-                                                            target.sendMessage(prefix + mColor + player.getName() + sColor + " has sent a team invitation to you!");
-                                                            target.sendMessage(prefix + sColor + "Use " + mColor + "/team accept " + player.getName() + sColor + " to accept!");
+                                                            player.sendMessage(sColor + "You have sent an invitation to " + mColor + target.getName() + sColor + "!");
+                                                            target.sendMessage(mColor + player.getName() + sColor + " has sent a team invitation to you!");
+                                                            target.sendMessage(sColor + "Use " + mColor + "/team accept " + player.getName() + sColor + " to accept!");
 
                                                             new BukkitRunnable() {
                                                                 @Override
@@ -140,31 +140,31 @@ public class TeamCommand implements CommandExecutor {
                                                                 }
                                                             }.runTaskLater(game, 20 * 20);
                                                         } else {
-                                                            player.sendMessage(prefix + ChatColor.RED + "You have already sent an invitation to " + target.getName() + "!");
+                                                            player.sendMessage(ChatColor.RED + "You have already sent an invitation to " + target.getName() + "!");
                                                         }
                                                     } else {
-                                                        player.sendMessage(prefix + ChatColor.RED + target.getName() + " is already in a team!");
+                                                        player.sendMessage(ChatColor.RED + target.getName() + " is already in a team.");
                                                     }
                                                 } else {
-                                                    player.sendMessage(prefix + ChatColor.RED + "Your team is already full!");
+                                                    player.sendMessage(ChatColor.RED + "Your team is already full.");
                                                 }
                                             } else {
-                                                player.sendMessage(prefix + ChatColor.RED + "Only team leaders can send invitations!");
+                                                player.sendMessage(ChatColor.RED + "Only team leaders can send invitations.");
                                             }
                                         } else {
-                                            player.sendMessage(prefix + ChatColor.RED + "You haven't created a team yet!");
+                                            player.sendMessage(ChatColor.RED + "You haven't created a team yet.");
                                         }
                                     } else {
-                                        player.sendMessage(prefix + ChatColor.RED + "The game has already started!");
+                                        player.sendMessage(ChatColor.RED + "The game has already started.");
                                     }
                                 } else {
-                                    player.sendMessage(prefix + ChatColor.RED + "Team Management is currently disabled!");
+                                    player.sendMessage(ChatColor.RED + "Team Management is currently disabled.");
                                 }
                             } else {
-                                player.sendMessage(prefix + ChatColor.RED + "You cannot invite yourself!");
+                                player.sendMessage(ChatColor.RED + "You cannot invite yourself.");
                             }
                         } else {
-                            player.sendMessage(prefix + ChatColor.RED + args[1] + " is currently offline!");
+                            player.sendMessage(ChatColor.RED + args[1] + " is currently offline.");
                         }
                     } else if(args[0].equalsIgnoreCase("accept")) {
                         Player target = Bukkit.getPlayer(args[1]);
@@ -177,22 +177,22 @@ public class TeamCommand implements CommandExecutor {
                                             if(teamHandler.getTeamMembers().size() < game.getTeamManager().getTeamSize()) {
                                                 game.getTeamManager().addPlayerToTeam(game.getTeamNumber().get(target.getUniqueId()), player.getUniqueId());
                                             } else {
-                                                player.sendMessage(prefix + ChatColor.RED + "The team is already full!");
+                                                player.sendMessage(ChatColor.RED + "The team is already full.");
                                             }
                                         } else {
-                                            player.sendMessage(prefix + ChatColor.RED + target.getName() + " hasn't invited you or the invitation has expired!");
+                                            player.sendMessage(ChatColor.RED + target.getName() + " hasn't invited you or the invitation has expired!");
                                         }
                                     } else {
-                                        player.sendMessage(prefix + ChatColor.RED + "You are already in a team!");
+                                        player.sendMessage(ChatColor.RED + "You are already in a team.");
                                     }
                                 } else {
-                                    player.sendMessage(prefix + ChatColor.RED + args[1] + " is currently offline!");
+                                    player.sendMessage(ChatColor.RED + args[1] + " is currently offline.");
                                 }
                             } else {
-                                player.sendMessage(prefix + ChatColor.RED + "The game has already started!");
+                                player.sendMessage(ChatColor.RED + "The game has already started.");
                             }
                         } else {
-                            player.sendMessage(prefix + ChatColor.RED + "Team Management is currently disabled!");
+                            player.sendMessage(ChatColor.RED + "Team Management is currently disabled.");
                         }
                     } else if(args[0].equalsIgnoreCase("kick")) {
                         OfflinePlayer target = Bukkit.getOfflinePlayer(args[1]);
@@ -204,19 +204,19 @@ public class TeamCommand implements CommandExecutor {
                                         if(teamHandler.getTeamMembers().contains(target.getUniqueId())) {
                                             game.getTeamManager().kickPlayerFromTeam(game.getTeamNumber().get(player.getUniqueId()), target.getUniqueId());
                                         } else {
-                                            player.sendMessage(prefix + ChatColor.RED + target.getName() + " is not in your team!");
+                                            player.sendMessage(ChatColor.RED + target.getName() + " is not in your team.");
                                         }
                                     } else {
-                                        player.sendMessage(prefix + ChatColor.RED + "Only team leaders can kick players!");
+                                        player.sendMessage(ChatColor.RED + "Only team leaders can kick players.");
                                     }
                                 } else {
-                                    player.sendMessage(prefix + ChatColor.RED + "You are not in a team!");
+                                    player.sendMessage(ChatColor.RED + "You are not in a team.");
                                 }
                             } else{
-                                player.sendMessage(prefix + ChatColor.RED + "The game has already started!");
+                                player.sendMessage(ChatColor.RED + "The game has already started.");
                             }
                         } else {
-                            player.sendMessage(prefix + ChatColor.RED + "Team Management is currently disabled!");
+                            player.sendMessage(ChatColor.RED + "Team Management is currently disabled.");
                         }
                     } else if(args[0].equalsIgnoreCase("list")) {
                         Player target = Bukkit.getPlayer(args[1]);
@@ -238,13 +238,13 @@ public class TeamCommand implements CommandExecutor {
                                     }
                                     player.sendMessage("§8§m--------------------------");
                                 } else {
-                                    player.sendMessage(prefix + ChatColor.RED + "This player is not in a team!");
+                                    player.sendMessage(ChatColor.RED + "This player is not in a team.");
                                 }
                             } else {
-                                player.sendMessage(prefix + ChatColor.RED + args[1] + " is currently offline!");
+                                player.sendMessage(ChatColor.RED + args[1] + " is currently offline.");
                             }
                         } else {
-                            player.sendMessage(prefix + ChatColor.RED + "Team Management is currently disabled!");
+                            player.sendMessage(ChatColor.RED + "Team Management is currently disabled.");
                         }
                     }
                 }
