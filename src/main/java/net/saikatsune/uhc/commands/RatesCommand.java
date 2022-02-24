@@ -23,16 +23,16 @@ public class RatesCommand implements CommandExecutor {
                 if(args[0].equalsIgnoreCase("apple")) {
                     try {
                         game.getConfigManager().setAppleRate(Double.parseDouble(args[1]));
-                        Bukkit.broadcastMessage(prefix + mColor + "Apple Rate " + sColor + "has changed to " + mColor + args[1] + "%" + sColor + "!");
+                        Bukkit.broadcastMessage(mColor + "Apple Rate " + sColor + "has changed to " + mColor + args[1] + "%" + sColor + ".");
                     } catch (NumberFormatException ex) {
-                        player.sendMessage(prefix + ChatColor.RED + "The argument has to be numeric!");
+                        player.sendMessage(ChatColor.RED + "The argument has to be numeric!");
                     }
                 } else if(args[0].equalsIgnoreCase("flint")) {
                     try {
                         game.getConfigManager().setFlintRate(Double.parseDouble(args[1]));
-                        Bukkit.broadcastMessage(prefix + mColor + "Flint Rate " + sColor + "has changed to " + mColor + args[1] + "%" + sColor + "!");
+                        Bukkit.broadcastMessage(mColor + "Flint Rate " + sColor + "has changed to " + mColor + args[1] + "%" + sColor + ".");
                     } catch (NumberFormatException ex) {
-                        player.sendMessage(prefix + ChatColor.RED + "The argument has to be numeric!");
+                        player.sendMessage(ChatColor.RED + "The argument has to be numeric!");
                     }
                 }
             } else {
