@@ -55,23 +55,23 @@ public class RespawnCommand implements CommandExecutor {
 
                                     if(Scenarios.BestPVE.isEnabled()) {
                                         game.getBestPvePlayers().add(player.getUniqueId());
-                                        player.sendMessage(prefix + ChatColor.GREEN + "You have been added to the BestPVE list.");
+                                        player.sendMessage(ChatColor.GREEN + "You have been added to the BestPVE list.");
                                     }
 
                                     game.getLogoutTimer().putIfAbsent(player.getUniqueId(), game.getRelogTimeInMinutes() * 60);
 
-                                    Bukkit.broadcastMessage(prefix + mColor + target.getName() + sColor + " has been re-spawned!");
+                                    Bukkit.broadcastMessage(mColor + target.getName() + sColor + " has been re-spawned!");
                                 } else {
-                                    player.sendMessage(prefix + ChatColor.RED + target.getName() + " hasn't died in this game!");
+                                    player.sendMessage(ChatColor.RED + target.getName() + " hasn't died in this game.");
                                 }
                             } else {
-                                player.sendMessage(prefix + ChatColor.RED + target.getName() + " is already in game!");
+                                player.sendMessage(ChatColor.RED + target.getName() + " is already in game.");
                             }
                         } else {
-                            player.sendMessage(prefix + ChatColor.RED + "You cannot respawn players right now!");
+                            player.sendMessage(ChatColor.RED + "You cannot respawn players right now.");
                         }
                     } else {
-                        player.sendMessage(prefix + ChatColor.RED + args[0] + " is currently offline!");
+                        player.sendMessage(ChatColor.RED + args[0] + " is currently offline.");
                     }
                 } else {
                     player.sendMessage(ChatColor.RED + "Usage: /respawn (player)");
