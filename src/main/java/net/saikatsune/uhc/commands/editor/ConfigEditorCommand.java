@@ -119,7 +119,7 @@ public class ConfigEditorCommand implements CommandExecutor, Listener {
                             try {
                                 game.getDatabaseManager().disconnectFromDatabase();
                                 game.setDatabaseActive(false);
-                                Bukkit.broadcastMessage(prefix + mColor + "Stats" + sColor + " are now " + ChatColor.RED + "disabled" + sColor + "!");
+                                Bukkit.broadcastMessage(mColor + "Stats" + sColor + " are now " + ChatColor.RED + "disabled" + sColor + ".");
                             } catch (SQLException e) {
                                 player.sendMessage(prefix + ChatColor.RED + "Cannot disconnect from database... It might not be connected, please restart your server!");
                             }
@@ -134,9 +134,9 @@ public class ConfigEditorCommand implements CommandExecutor, Listener {
                             try {
                                 game.getDatabaseManager().createTable();
                                 game.setDatabaseActive(true);
-                                Bukkit.broadcastMessage(prefix + mColor + "Stats" + sColor + " are now " + ChatColor.GREEN + "enabled" + sColor + "!");
+                                Bukkit.broadcastMessage(mColor + "Stats" + sColor + " are now " + ChatColor.GREEN + "enabled" + sColor + "!");
 
-                                Bukkit.broadcastMessage(prefix + sColor + "Setting up leaderboards...");
+                                Bukkit.broadcastMessage(sColor + "Setting up leaderboards...");
 
                                 game.getDatabaseManager().getTop10Kills();
                                 game.getDatabaseManager().getTop10Deaths();
@@ -144,7 +144,7 @@ public class ConfigEditorCommand implements CommandExecutor, Listener {
 
                                 game.getInventoryHandler().setupLeaderboardsInventory();
 
-                                Bukkit.broadcastMessage(prefix + ChatColor.GREEN + "Leaderboards have been successfully setup.");
+                                Bukkit.broadcastMessage(ChatColor.GREEN + "Leaderboards have been successfully setup.");
                             } catch (SQLException e) {
                                 player.sendMessage(prefix + ChatColor.RED + "Cannot create tables... The database might not be connected.");
                             }
