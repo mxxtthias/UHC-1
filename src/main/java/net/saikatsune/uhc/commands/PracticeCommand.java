@@ -32,7 +32,7 @@ public class PracticeCommand implements CommandExecutor {
                                     player.getInventory().clear();
                                     game.getInventoryHandler().handlePracticeInventory(player);
                                     game.getGameManager().scatterPlayer(player, Bukkit.getWorld("uhc_practice"), 49);
-                                    player.sendMessage(prefix + sColor + "You have joined the arena!");
+                                    player.sendMessage(sColor + "You have joined the arena!");
                                 } else {
                                     game.getArenaPlayers().remove(player.getUniqueId());
                                     player.getInventory().clear();
@@ -40,16 +40,16 @@ public class PracticeCommand implements CommandExecutor {
                                     game.getInventoryHandler().handleLobbyInventory(player);
                                     player.teleport(game.getLocationManager().getLocation("Spawn-Location"));
                                     player.setHealth(20);
-                                    player.sendMessage(prefix + sColor + "You have left the arena!");
+                                    player.sendMessage(sColor + "You have left the arena!");
                                 }
                             } else {
-                                player.sendMessage(prefix + ChatColor.RED + "You cannot go in arena while being in staff-mode.");
+                                player.sendMessage(ChatColor.RED + "You cannot go in arena while being in staff-mode.");
                             }
                         } else {
-                            player.sendMessage(prefix + ChatColor.RED + "The arena is currently disabled!");
+                            player.sendMessage(ChatColor.RED + "The arena is currently disabled.");
                         }
                     } else {
-                        player.sendMessage(prefix + ChatColor.RED + "The game has already started!");
+                        player.sendMessage(ChatColor.RED + "The game has already started.");
                     }
                 } else {
                     if(args[0].equalsIgnoreCase("toggle")) {
@@ -69,14 +69,14 @@ public class PracticeCommand implements CommandExecutor {
                                     }
                                     game.getArenaPlayers().clear();
 
-                                    Bukkit.broadcastMessage(prefix + ChatColor.RED + "The arena has been disabled!");
+                                    Bukkit.broadcastMessage(ChatColor.RED + "The arena has been disabled.");
                                 } else {
                                     game.setArenaEnabled(true);
 
-                                    Bukkit.broadcastMessage(prefix + ChatColor.GREEN + "The arena has been enabled!");
+                                    Bukkit.broadcastMessage(ChatColor.GREEN + "The arena has been enabled!");
                                 }
                             } else {
-                                player.sendMessage(prefix + ChatColor.RED + "The game has already started!");
+                                player.sendMessage(ChatColor.RED + "The game has already started.");
                             }
                         }
                     }
