@@ -20,7 +20,7 @@ public class ScenariosCommand implements CommandExecutor {
                 if(game.getScenariosInList().size() > 0) {
                     player.openInventory(Scenarios.getExplanations());
                 } else {
-                    player.sendMessage(game.getPrefix() + ChatColor.RED + "There are currently no scenarios enabled.");
+                    player.sendMessage(ChatColor.RED + "There are currently no scenarios enabled.");
                 }
             }
         }
