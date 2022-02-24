@@ -25,12 +25,12 @@ public class HealthCommand implements CommandExecutor {
                 if(args.length == 1) {
                     Player target = Bukkit.getPlayer(args[0]);
                     if(target != null) {
-                        player.sendMessage(prefix + sColor + target.getName() + "'s health: " + mColor + Math.round(target.getHealth()) + " ❤");
+                        player.sendMessage(sColor + target.getName() + "'s health: " + mColor + Math.round(target.getHealth()) + " ❤");
                     } else {
-                        player.sendMessage(prefix + ChatColor.RED + args[0] + " is currently offline!");
+                        player.sendMessage(ChatColor.RED + args[0] + " is currently offline.");
                     }
                 } else {
-                    player.sendMessage(prefix + sColor + "Your health: " + mColor + Math.round(player.getHealth()) + " ❤");
+                    player.sendMessage(sColor + "Your health: " + mColor + Math.round(player.getHealth()) + " ❤");
                 }
             }
         }
