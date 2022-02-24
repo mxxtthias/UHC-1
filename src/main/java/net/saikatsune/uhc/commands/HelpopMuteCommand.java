@@ -28,9 +28,9 @@ public class HelpopMuteCommand implements CommandExecutor {
                 if(!game.getHelpopMuted().contains(target.getUniqueId())) {
                     game.getHelpopMuted().add(target.getUniqueId());
 
-                    Bukkit.broadcastMessage(prefix + mColor + target.getName() + sColor + " has been helpop-muted for this game!");
+                    Bukkit.broadcastMessage(mColor + target.getName() + sColor + " has been helpop-muted for this game.");
                 } else {
-                    player.sendMessage(prefix + ChatColor.RED + target.getName() + " is already helpop-muted!");
+                    player.sendMessage(ChatColor.RED + target.getName() + " is already helpop-muted.");
                 }
             }
         } else if(cmd.getName().equalsIgnoreCase("helpopunmute")) {
