@@ -29,19 +29,19 @@ public class BackpackCommand implements CommandExecutor {
                                     TeamHandler teamHandler = game.getTeamManager().getTeams().get(game.getTeamNumber().get(player.getUniqueId()));
                                     player.openInventory(teamHandler.getTeamInventory());
                                 } else {
-                                    player.sendMessage(prefix + ChatColor.RED + "You cannot use your backpack right now!");
+                                    player.sendMessage(ChatColor.RED + "You cannot use your backpack right now!");
                                 }
                             } else {
-                                player.sendMessage(prefix + ChatColor.RED + "You are not in a team!");
+                                player.sendMessage(ChatColor.RED + "You are not in a team!");
                             }
                         } else {
-                            player.sendMessage(prefix + ChatColor.RED + "Only players can use backpacks!");
+                            player.sendMessage(ChatColor.RED + "Only players can use backpacks!");
                         }
                     } else {
-                        player.sendMessage(prefix + ChatColor.RED + "Team Management is currently disabled!");
+                        player.sendMessage(ChatColor.RED + "Team Management is currently disabled!");
                     }
                 } else {
-                    player.sendMessage(prefix + ChatColor.RED + "Backpacks are not enabled!");
+                    player.sendMessage(ChatColor.RED + "Backpacks are not enabled!");
                 }
             }
         }
