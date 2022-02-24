@@ -17,7 +17,7 @@ public class ConfigCommand implements CommandExecutor {
     public boolean onCommand(CommandSender player, Command cmd, String label, String[] args) {
         if(cmd.getName().equalsIgnoreCase("config")) {
             player.sendMessage("§8§m-----------------------");
-            player.sendMessage(mColor + "UHC GAME CONFIGURATION");
+            player.sendMessage(mColor + "UHC Game Configuration");
             player.sendMessage("");
             if(!game.getGameManager().isTeamGame()) {
                 player.sendMessage(sColor + "Game Type: " + mColor + "FFA");
