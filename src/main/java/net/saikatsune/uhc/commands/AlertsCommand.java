@@ -44,10 +44,10 @@ public class AlertsCommand implements CommandExecutor, Listener {
 
                             if(game.getReceivePvpAlerts().contains(player.getUniqueId())) {
                                 game.getReceivePvpAlerts().remove(player.getUniqueId());
-                                player.sendMessage(prefix + ChatColor.RED + "You will no longer receive pvp alerts!");
+                                player.sendMessage(ChatColor.RED + "You will no longer receive pvp alerts!");
                             } else {
                                 game.getReceivePvpAlerts().add(player.getUniqueId());
-                                player.sendMessage(prefix + ChatColor.GREEN + "You will now receive pvp alerts!");
+                                player.sendMessage(ChatColor.GREEN + "You will now receive pvp alerts!");
                             }
 
                             game.getInventoryHandler().handleAlertsInventory(player);
@@ -58,10 +58,10 @@ public class AlertsCommand implements CommandExecutor, Listener {
 
                             if(game.getReceiveDiamondAlerts().contains(player.getUniqueId())) {
                                 game.getReceiveDiamondAlerts().remove(player.getUniqueId());
-                                player.sendMessage(prefix + ChatColor.RED + "You will no longer receive diamond alerts!");
+                                player.sendMessage(ChatColor.RED + "You will no longer receive diamond alerts!");
                             } else {
                                 game.getReceiveDiamondAlerts().add(player.getUniqueId());
-                                player.sendMessage(prefix + ChatColor.GREEN + "You will now receive diamond alerts!");
+                                player.sendMessage(ChatColor.GREEN + "You will now receive diamond alerts!");
                             }
 
                             game.getInventoryHandler().handleAlertsInventory(player);
@@ -72,10 +72,10 @@ public class AlertsCommand implements CommandExecutor, Listener {
 
                             if(game.getReceiveGoldAlerts().contains(player.getUniqueId())) {
                                 game.getReceiveGoldAlerts().remove(player.getUniqueId());
-                                player.sendMessage(prefix + ChatColor.RED + "You will no longer receive gold alerts!");
+                                player.sendMessage(ChatColor.RED + "You will no longer receive gold alerts!");
                             } else {
                                 game.getReceiveGoldAlerts().add(player.getUniqueId());
-                                player.sendMessage(prefix + ChatColor.GREEN + "You will now receive gold alerts!");
+                                player.sendMessage(ChatColor.GREEN + "You will now receive gold alerts!");
                             }
 
                             game.getInventoryHandler().handleAlertsInventory(player);
