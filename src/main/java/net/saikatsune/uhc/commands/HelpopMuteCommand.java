@@ -41,9 +41,9 @@ public class HelpopMuteCommand implements CommandExecutor {
                 if(game.getHelpopMuted().contains(target.getUniqueId())) {
                     game.getHelpopMuted().remove(target.getUniqueId());
 
-                    player.sendMessage(prefix + mColor + target.getName() + sColor + " has been unmuted!");
+                    player.sendMessage(mColor + target.getName() + sColor + " has been unmuted.");
                 } else {
-                    player.sendMessage(prefix + ChatColor.RED + target.getName() + " is not helpop-muted!");
+                    player.sendMessage(ChatColor.RED + target.getName() + " is not helpop-muted.");
                 }
             }
         }
