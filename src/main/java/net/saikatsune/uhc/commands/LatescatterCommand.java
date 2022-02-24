@@ -81,21 +81,21 @@ public class LatescatterCommand implements CommandExecutor {
 
                                 if(Scenarios.BestPVE.isEnabled()) {
                                     game.getBestPvePlayers().add(player.getUniqueId());
-                                    player.sendMessage(prefix + ChatColor.GREEN + "You have been added to the BestPVE list.");
+                                    player.sendMessage(ChatColor.GREEN + "You have been added to the BestPVE list.");
                                 }
 
-                                Bukkit.broadcastMessage(prefix + mColor + player.getName() + sColor + " has been scattered.");
+                                Bukkit.broadcastMessage(mColor + player.getName() + sColor + " has been scattered.");
                             } else {
-                                player.sendMessage(prefix + ChatColor.RED + "You have already died this game.");
+                                player.sendMessage(ChatColor.RED + "You have already died this game.");
                             }
                         } else {
-                            player.sendMessage(prefix + ChatColor.RED + "You can no longer late-scatter yourself.");
+                            player.sendMessage(ChatColor.RED + "You can no longer late-scatter yourself.");
                         }
                     } else {
-                        player.sendMessage(prefix + ChatColor.RED + "You are already in-game.");
+                        player.sendMessage(ChatColor.RED + "You are already in-game.");
                     }
                 } else {
-                    player.sendMessage(prefix + ChatColor.RED + "There is currently no game running.");
+                    player.sendMessage(ChatColor.RED + "There is currently no game running.");
                 }
             } else {
                 player.sendMessage(ChatColor.RED + "Usage: /latescatter");
