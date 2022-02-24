@@ -31,15 +31,15 @@ public class SendCoordsCommand implements CommandExecutor {
 
                         for (Player allPlayers : Bukkit.getOnlinePlayers()) {
                             if(teamHandler.getTeamMembers().contains(allPlayers.getUniqueId())) {
-                                allPlayers.sendMessage(prefix + mColor + player.getName() + "'s coordinates: " + sColor +
+                                allPlayers.sendMessage(mColor + player.getName() + "'s coordinates: " + sColor +
                                         player.getLocation().getBlockX() + "/" + player.getLocation().getBlockY() + "/" + player.getLocation().getBlockZ());
                             }
                         }
                     } else {
-                        player.sendMessage(prefix + ChatColor.RED + "You are not in a team!");
+                        player.sendMessage(ChatColor.RED + "You are not in a team.");
                     }
                 } else {
-                    player.sendMessage(prefix + ChatColor.RED + "Team Management is currently disabled!");
+                    player.sendMessage(ChatColor.RED + "Team Management is currently disabled.");
                 }
             }
         }
