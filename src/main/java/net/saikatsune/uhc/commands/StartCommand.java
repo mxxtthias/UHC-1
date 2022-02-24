@@ -27,20 +27,20 @@ public class StartCommand implements CommandExecutor {
                     if (Bukkit.getWorld("uhc_world") != null) {
                         if (Bukkit.getWorld("uhc_nether") != null) {
                             if(!game.isArenaEnabled()) {
-                                player.sendMessage(prefix + mColor + "You have started the game!");
+                                player.sendMessage(mColor + "You have started the game.");
                                 game.getGameStateManager().setGameState(GameState.SCATTERING);
                                 game.getScatterTask().runTask();
                             } else {
-                                player.sendMessage(prefix + ChatColor.RED + "Please disable practice before you start the game!");
+                                player.sendMessage(ChatColor.RED + "Please disable practice before you start the game.");
                             }
                         } else {
-                            player.sendMessage(prefix + ChatColor.RED + "The UHC nether doesn't exist!");
+                            player.sendMessage(ChatColor.RED + "The UHC nether doesn't exist.");
                         }
                     } else {
-                        player.sendMessage(prefix + ChatColor.RED + "The UHC world doesn't exist!");
+                        player.sendMessage(ChatColor.RED + "The UHC world doesn't exist.");
                     }
                 } else {
-                    player.sendMessage(prefix + ChatColor.RED + "The game has already started!");
+                    player.sendMessage(ChatColor.RED + "The game has already started.");
                 }
             }
         }
