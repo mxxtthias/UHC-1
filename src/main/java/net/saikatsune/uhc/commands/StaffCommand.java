@@ -42,14 +42,14 @@ public class StaffCommand implements CommandExecutor {
                                 game.getReceiveDiamondAlerts().add(player.getUniqueId());
                                 game.getReceiveGoldAlerts().add(player.getUniqueId());
                             } else {
-                                player.sendMessage(prefix + ChatColor.RED + "You cannot go into staff-mode when in arena.");
+                                player.sendMessage(ChatColor.RED + "You cannot go into staff-mode when in arena.");
                             }
                         } else {
                             player.damage(20);
                         }
 
                         if(!game.getArenaPlayers().contains(player.getUniqueId())) {
-                            player.sendMessage(prefix + ChatColor.GREEN + "You are now in Staff-Mode!");
+                            player.sendMessage(ChatColor.GREEN + "You are now in Staff-Mode.");
                         }
                     } else {
                         if(game.getGameStateManager().getCurrentGameState() instanceof LobbyState) {
@@ -61,15 +61,15 @@ public class StaffCommand implements CommandExecutor {
                             game.getReceiveGoldAlerts().remove(player.getUniqueId());
 
                             player.teleport(game.getLocationManager().getLocation("Spawn-Location"));
-                            player.sendMessage(prefix + ChatColor.RED + "You are no longer in Staff-Mode!");
+                            player.sendMessage(ChatColor.RED + "You are no longer in Staff-Mode.");
 
                             game.getInventoryHandler().handleLobbyInventory(player);
                         } else {
-                            player.sendMessage(prefix + ChatColor.RED + "The game has already started!");
+                            player.sendMessage(ChatColor.RED + "The game has already started.");
                         }
                     }
                 } else {
-                    player.sendMessage(prefix + ChatColor.RED + "You cannot go into staff-mode right now.");
+                    player.sendMessage(ChatColor.RED + "You cannot go into staff-mode right now.");
                 }
             }
         }
