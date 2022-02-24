@@ -28,7 +28,7 @@ public class StatsCommand implements CommandExecutor {
                             if(game.getDatabaseManager().isPlayerRegistered(target)) {
                                 game.getInventoryHandler().handleStatsInventory(player, target);
                             } else {
-                                player.sendMessage(prefix + ChatColor.RED + target.getName() + " is not registered in the database.");
+                                player.sendMessage(ChatColor.RED + target.getName() + " is not registered in the database.");
                             }
                         } else if(args.length == 0) {
                             game.getInventoryHandler().handleStatsInventory(player, player);
@@ -37,7 +37,7 @@ public class StatsCommand implements CommandExecutor {
                         }
                     });
                 } else {
-                    player.sendMessage(prefix + ChatColor.RED + "Stats are currently disabled!");
+                    player.sendMessage(ChatColor.RED + "Stats are currently disabled.");
                 }
             }
         }
