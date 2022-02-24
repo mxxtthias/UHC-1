@@ -35,13 +35,13 @@ public class ListCommand implements CommandExecutor {
             String[] stringArray = moderators.toArray(new String[moderators.size()]);
 
             player.sendMessage("§8§m---------------------------");
-            player.sendMessage(prefix + sColor + "Game Host: " + mColor + game.getGameHost());
+            player.sendMessage(sColor + "Game Host: " + mColor + game.getGameHost());
             player.sendMessage("");
-            player.sendMessage(prefix + sColor + "Online Players: " + mColor + Bukkit.getOnlinePlayers().size());
-            player.sendMessage(prefix + sColor + "Alive Players: " + mColor + game.getPlayers().size());
+            player.sendMessage(sColor + "Online Players: " + mColor + Bukkit.getOnlinePlayers().size());
+            player.sendMessage(sColor + "Alive Players: " + mColor + game.getPlayers().size());
             player.sendMessage("");
-            player.sendMessage(prefix + sColor + "Spectators: " + mColor + game.getSpectators().size());
-            player.sendMessage(prefix + sColor + "Moderators: " + mColor + Arrays.toString(stringArray).
+            player.sendMessage(sColor + "Spectators: " + mColor + game.getSpectators().size());
+            player.sendMessage(sColor + "Moderators: " + mColor + Arrays.toString(stringArray).
                     replace("[", "").replace("]", ""));
             player.sendMessage("§8§m---------------------------");
         }
