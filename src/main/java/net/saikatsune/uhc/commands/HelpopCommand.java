@@ -48,7 +48,7 @@ public class HelpopCommand implements CommandExecutor {
                             @Override
                             public void run() {
                                 helpopCooldown.remove(player.getUniqueId());
-                                player.sendMessage(sColor + "You can now send help requests again.");
+                                player.sendMessage(mColor + "You can now send help requests again.");
                             }
                         }.runTaskLater(game, 10 * 20);
                     } else {
