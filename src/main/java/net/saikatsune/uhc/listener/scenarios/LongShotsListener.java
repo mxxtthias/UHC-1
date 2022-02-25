@@ -44,7 +44,7 @@ public class LongShotsListener implements Listener {
                                 } else {
                                     shooter.setHealth(shooter.getHealth() + 2.0);
                                 }
-                                Bukkit.broadcastMessage(prefix + mColor + shooter.getName() + sColor + " hit a long shot of " + mColor +
+                                Bukkit.broadcastMessage(mColor + shooter.getName() + sColor + " hit a long shot of " + mColor +
                                         Math.round(shooterLocation.distance(shotLocation)) + sColor + " blocks.");
                             }
                         }
