@@ -63,7 +63,7 @@ public class ScatterTask {
             }
         }
 
-        Bukkit.broadcastMessage(prefix + sColor + "Starting scatter of all players!");
+        Bukkit.broadcastMessage(sColor + "Starting scatter of all players.");
 
         taskID = Bukkit.getScheduler().scheduleSyncRepeatingTask(game, new BukkitRunnable() {
             @Override
@@ -103,7 +103,7 @@ public class ScatterTask {
 
                 if (playersToScatter.size() == 0) {
                     Bukkit.getScheduler().cancelTask(taskID);
-                    Bukkit.broadcastMessage(prefix + ChatColor.GREEN + "Finished scatter of all players!");
+                    Bukkit.broadcastMessage(ChatColor.GREEN + "Finished scatter of all players.");
 
                     if(game.getGameManager().isTeamGame()) {
                         for (Player allPlayers : Bukkit.getOnlinePlayers()) {
@@ -127,7 +127,7 @@ public class ScatterTask {
                             }
                         }
 
-                        Bukkit.broadcastMessage(prefix + sColor + "All teams have been teleported to their leaders!");
+                        Bukkit.broadcastMessage(sColor + "All teams have been teleported to their leaders.");
                     }
 
                     for (Player allPlayers : Bukkit.getOnlinePlayers()) {
@@ -141,14 +141,14 @@ public class ScatterTask {
 
                     game.getGameManager().setWhitelisted(true);
 
-                    Bukkit.broadcastMessage(prefix + sColor + "All players have been whitelisted!");
-                    Bukkit.broadcastMessage(prefix + mColor + "The game starts in 10 seconds!");
+                    Bukkit.broadcastMessage(sColor + "All players have been whitelisted.");
+                    Bukkit.broadcastMessage(mColor + "The game starts in 10 seconds.");
 
                     new BukkitRunnable() {
                         @Override
                         public void run() {
                             game.getGameStateManager().setGameState(GameState.INGAME);
-                            Bukkit.broadcastMessage(prefix + mColor + "The game has started. Good Luck!");
+                            Bukkit.broadcastMessage("§c§lThe UHC has begun!");
 
                             for (Player allPlayers : Bukkit.getOnlinePlayers()) {
                                 for (PotionEffect potionEffect : allPlayers.getActivePotionEffects()) {
