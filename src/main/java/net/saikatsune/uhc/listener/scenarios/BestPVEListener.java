@@ -26,7 +26,7 @@ public class BestPVEListener implements Listener {
                     if(!event.isCancelled()) {
                         if(game.getBestPvePlayers().contains(player.getUniqueId())) {
                             game.getBestPvePlayers().remove(player.getUniqueId());
-                            player.sendMessage(prefix + ChatColor.RED + "You have been removed from the BestPVE list.");
+                            player.sendMessage(ChatColor.RED + "You have been removed from the BestPVE list.");
                         }
                     }
                 }
@@ -43,7 +43,7 @@ public class BestPVEListener implements Listener {
                 if(killer != null) {
                     if(!game.getBestPvePlayers().contains(killer.getUniqueId())) {
                         game.getBestPvePlayers().add(killer.getUniqueId());
-                        killer.sendMessage(prefix + ChatColor.GREEN + "You have been added to the BestPVE list.");
+                        killer.sendMessage(ChatColor.GREEN + "You have been added to the BestPVE list.");
                     }
                 }
             }
