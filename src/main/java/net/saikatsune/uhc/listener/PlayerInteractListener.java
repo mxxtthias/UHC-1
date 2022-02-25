@@ -44,7 +44,7 @@ public class PlayerInteractListener implements Listener {
             if(player.getItemInHand().getType() == Material.NETHER_STAR) {
                 if(player.getItemInHand().getItemMeta().getDisplayName().equalsIgnoreCase(mColor + "Teleport to Center")) {
                     player.teleport(new Location(Bukkit.getWorld("uhc_world"), 0 , 100, 0));
-                    player.sendMessage(prefix + sColor + "You have been teleported to the " + mColor + "center of the map" + sColor + "!");
+                    player.sendMessage(sColor + "You have been teleported to the " + mColor + "center of the map" + sColor + ".");
                 }
             } else if(player.getItemInHand().getType() == Material.BEACON) {
                 if(player.getItemInHand().getItemMeta().getDisplayName().equalsIgnoreCase(mColor + "Random Player")) {
@@ -54,12 +54,12 @@ public class PlayerInteractListener implements Listener {
                                 try {
                                     player.teleport(game.getGameManager().getRandomPlayer());
                                 } catch (Exception exception) {
-                                    player.sendMessage(prefix + ChatColor.RED + "Teleporting to a random player has failed..");
+                                    player.sendMessage(ChatColor.RED + "Teleporting to a random player has failed.");
                                 }
                             }
                         }
                     } else {
-                        player.sendMessage(prefix + ChatColor.RED + "There is currently no game running!");
+                        player.sendMessage(ChatColor.RED + "There is currently no game running.");
                     }
                 }
             } else if(player.getItemInHand().getType() == Material.WATCH) {
@@ -68,10 +68,10 @@ public class PlayerInteractListener implements Listener {
                         try {
                             game.getInventoryHandler().handlePlayersInventory(player);
                         } catch (Exception exception) {
-                            player.sendMessage(prefix + ChatColor.RED + "Finding players to teleport has failed..");
+                            player.sendMessage(ChatColor.RED + "Finding players to teleport has failed.");
                         }
                     } else {
-                        player.sendMessage(prefix + ChatColor.RED + "There is currently no game running!");
+                        player.sendMessage(ChatColor.RED + "There is currently no game running.");
                     }
                 }
             }
@@ -106,7 +106,7 @@ public class PlayerInteractListener implements Listener {
                 player.getLocation().getBlockX() > 50 || player.getLocation().getBlockZ() > 50 || player
                         .getLocation().getBlockX() < -50 || player.getLocation().getBlockZ() < -50)) {
             player.teleport(new Location(Bukkit.getWorld("uhc_world"), 0.0D, 100.0D, 0.0D));
-            player.sendMessage(this.prefix + ChatColor.RED + "You may only spectate 50x50 blocks!");
+            player.sendMessage(ChatColor.RED + "You may only spectate 50x50 blocks.");
         }
     }
 
@@ -151,7 +151,7 @@ public class PlayerInteractListener implements Listener {
                         inventory.setItem(53, pane);
                         player.openInventory(inventory);
                     } else {
-                        player.sendMessage(prefix + ChatColor.RED + "There is currently no game running!");
+                        player.sendMessage(ChatColor.RED + "There is currently no game running.");
                     }
                 }
             }
