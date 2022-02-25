@@ -103,8 +103,7 @@ public class EntityDamageListener implements Listener {
                             game.getGameManager().dropPlayerDeathInventory(dyingPlayer.getUniqueId(), player);
 
                             game.getDeathLocation().get(dyingPlayer.getUniqueId()).getWorld().dropItem(
-                              game.getDeathLocation().get(dyingPlayer.getUniqueId()), new ItemHandler(Material.GOLDEN_APPLE).setDisplayName(
-                                      ChatColor.GOLD + "Golden Head").build());
+                              game.getDeathLocation().get(dyingPlayer.getUniqueId()), new ItemHandler(Material.GOLDEN_APPLE).setDisplayName("§6§lGolden Head").build());
 
                             if(Scenarios.BleedingSweets.isEnabled()) {
                                 game.getDeathLocation().get(dyingPlayer.getUniqueId()).getWorld().dropItem(
@@ -256,11 +255,11 @@ public class EntityDamageListener implements Listener {
                     event.setDeathMessage("");
 
                     if(player.getKiller() != null) {
-                        player.getKiller().sendMessage(prefix + ChatColor.GREEN + "You have slain " + player.getName() + "!");
-                        player.sendMessage(prefix + ChatColor.RED + "You have been slain by " + player.getKiller().getName() + "!");
+                        player.getKiller().sendMessage(ChatColor.GREEN + "You have slain " + player.getName() + ".");
+                        player.sendMessage(ChatColor.RED + "You have been slain by " + player.getKiller().getName() + ".");
 
                         player.getKiller().getInventory().addItem(new ItemHandler(Material.GOLDEN_APPLE).
-                                setDisplayName(ChatColor.GOLD + "Golden Head").build());
+                                setDisplayName("§6§lGolden Head").build());
                     }
 
                     new BukkitRunnable() {
