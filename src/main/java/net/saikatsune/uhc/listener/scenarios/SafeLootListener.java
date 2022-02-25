@@ -65,7 +65,7 @@ public class SafeLootListener implements Listener {
                                 if(!game.getGameManager().isTeamGame()) {
                                     if (safeLoot.get(block.getLocation()) != player.getUniqueId()) {
                                         event.setCancelled(true);
-                                        player.sendMessage(prefix + ChatColor.RED + "The loot in the chest does not belong to you.");
+                                        player.sendMessage(ChatColor.RED + "The loot in the chest does not belong to you.");
                                     }
                                 } else {
                                     TeamHandler teamHandler = game.getTeamManager().getTeams().get(game.getTeamNumber().get(player.getUniqueId()));
@@ -73,14 +73,14 @@ public class SafeLootListener implements Listener {
                                     if ((safeLoot.get(block.getLocation()) != player.getUniqueId()) &&
                                             !teamHandler.getTeamMembers().contains(safeLoot.get(block.getLocation()))) {
                                         event.setCancelled(true);
-                                        player.sendMessage(prefix + ChatColor.RED + "The loot in the chest does not belong to you.");
+                                        player.sendMessage(ChatColor.RED + "The loot in the chest does not belong to you.");
                                     }
                                 }
                             }
                         } catch (Exception ignored) {}
                     } else {
                         Scenarios.SafeLoot.setEnabled(false);
-                        Bukkit.broadcastMessage(prefix + ChatColor.RED + "SafeLoot has been disabled because TimeBomb is already active.");
+                        Bukkit.broadcastMessage(ChatColor.RED + "SafeLoot has been disabled because TimeBomb is already active.");
                     }
                 }
             }
@@ -114,7 +114,7 @@ public class SafeLootListener implements Listener {
                 }
             }
 
-            chest.getInventory().addItem(new ItemHandler(Material.GOLDEN_APPLE).setDisplayName(ChatColor.GOLD + "Golden Head").build());
+            chest.getInventory().addItem(new ItemHandler(Material.GOLDEN_APPLE).setDisplayName("§6§lGolden Head").build());
 
             for (ItemStack stack : inv) {
                 if ((stack != null) && (stack.getType() != Material.AIR)) {
@@ -141,7 +141,7 @@ public class SafeLootListener implements Listener {
                             location.getWorld().strikeLightning(location);
                             this.cancel();
 
-                            Bukkit.broadcastMessage(game.getPrefix() + mColor + "[SafeLoot] " + name + "'s " + sColor + "corpse has exploded.");
+                            Bukkit.broadcastMessage(mColor + "[SafeLoot] " + name + "'s " + sColor + "corpse has exploded.");
                             return;
                         }
 
@@ -162,7 +162,7 @@ public class SafeLootListener implements Listener {
                     public void run() {
                         location.getWorld().createExplosion(location, 10.0F);
                         location.getWorld().strikeLightning(location);
-                        Bukkit.broadcastMessage(game.getPrefix() + mColor + "[SafeLoot] " + name + "'s " + sColor + "corpse has exploded.");
+                        Bukkit.broadcastMessage(mColor + "[SafeLoot] " + name + "'s " + sColor + "corpse has exploded.");
                     }
                 }.runTaskLater(game, 30 * 20);
             }
