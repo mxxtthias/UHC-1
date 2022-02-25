@@ -70,7 +70,7 @@ public class CutCleanListener implements Listener {
                             game.getLimitationsListener().getIronMined().putIfAbsent(player.getUniqueId(), 0);
                             if(game.getLimitationsListener().getIronMined().get(player.getUniqueId()) >= 64) {
                                 event.getBlock().setType(Material.AIR);
-                                player.sendMessage(prefix + ChatColor.RED + "You can only mine 64 iron!");
+                                player.sendMessage(ChatColor.RED + "You can only mine 64 iron!");
                                 return;
                             } else if(game.getLimitationsListener().getIronMined().get(player.getUniqueId()) < 64) {
                                 if(game.getServerVersion().equalsIgnoreCase(ServerVersion.V1_8_X.toString())) {
@@ -126,14 +126,14 @@ public class CutCleanListener implements Listener {
                                     }
                                 } else {
                                     event.getBlock().setType(Material.AIR);
-                                    player.sendMessage(prefix + ChatColor.RED + "You can only mine iron!");
+                                    player.sendMessage(ChatColor.RED + "You can only mine iron!");
                                     return;
                                 }
                             } else {
                                 game.getLimitationsListener().getGoldMined().putIfAbsent(player.getUniqueId(), 0);
                                 if(game.getLimitationsListener().getGoldMined().get(player.getUniqueId()) >= 32) {
                                     event.getBlock().setType(Material.AIR);
-                                    player.sendMessage(prefix + ChatColor.RED + "You can only mine 32 gold!");
+                                    player.sendMessage(ChatColor.RED + "You can only mine 32 gold!");
                                     return;
                                 } else if(game.getLimitationsListener().getGoldMined().get(player.getUniqueId()) < 32) {
                                     if(game.getServerVersion().equalsIgnoreCase(ServerVersion.V1_8_X.toString())) {
