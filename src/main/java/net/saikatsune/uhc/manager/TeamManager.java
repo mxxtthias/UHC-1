@@ -31,7 +31,7 @@ public class TeamManager {
         TeamHandler teamHandler = new TeamHandler(teamNumber, uuid);
         game.getTeamNumber().put(uuid, teamNumber);
         teams.put(teamNumber, teamHandler);
-        player.sendMessage(prefix + sColor + "You have created " + mColor + "Team #" + teamNumber + sColor + ".");
+        player.sendMessage(sColor + "You have created " + mColor + "Team #" + teamNumber + sColor + ".");
     }
 
     public void addPlayerToTeam(int teamNumber, UUID uuid) {
@@ -39,12 +39,12 @@ public class TeamManager {
         TeamHandler teamHandler = teams.get(teamNumber);
         teamHandler.getTeamMembers().add(uuid);
         game.getTeamNumber().put(uuid, teamNumber);
-        player.sendMessage(prefix + sColor + "You have joined " + mColor + "Team #" + teamNumber + sColor + ".");
+        player.sendMessage(sColor + "You have joined " + mColor + "Team #" + teamNumber + sColor + ".");
 
         for (Player allPlayers : Bukkit.getOnlinePlayers()) {
             if(game.getPlayers().contains(allPlayers.getUniqueId())) {
                 if(game.getTeamNumber().get(allPlayers.getUniqueId()) == teamNumber) {
-                    allPlayers.sendMessage(prefix + mColor + player.getName() + sColor + " has joined the team.");
+                    allPlayers.sendMessage(mColor + player.getName() + sColor + " has joined the team.");
                 }
             }
         }
@@ -54,7 +54,7 @@ public class TeamManager {
         Player player = Bukkit.getPlayer(uuid);
         TeamHandler teamHandler = teams.get(teamNumber);
         teamHandler.getTeamMembers().remove(uuid);
-        player.sendMessage(prefix + sColor + "You have left " + mColor + "Team #" + teamNumber + sColor + ".");
+        player.sendMessage(sColor + "You have left " + mColor + "Team #" + teamNumber + sColor + ".");
 
         if(game.getGameStateManager().getCurrentGameState() instanceof LobbyState) {
             game.getTeamNumber().put(uuid, -1);
@@ -63,7 +63,7 @@ public class TeamManager {
         for (Player allPlayers : Bukkit.getOnlinePlayers()) {
             if(game.getPlayers().contains(allPlayers.getUniqueId())) {
                 if(game.getTeamNumber().get(allPlayers.getUniqueId()) == teamNumber) {
-                    allPlayers.sendMessage(prefix + mColor + player.getName() + sColor + " has left the team.");
+                    allPlayers.sendMessage(mColor + player.getName() + sColor + " has left the team.");
                 }
             }
         }
@@ -77,7 +77,7 @@ public class TeamManager {
         Player player = Bukkit.getPlayer(uuid);
         TeamHandler teamHandler = teams.get(teamNumber);
         teamHandler.getTeamMembers().remove(uuid);
-        player.sendMessage(prefix + sColor + "You were kicked from " + mColor + "Team #" + teamNumber + sColor + ".");
+        player.sendMessage(sColor + "You were kicked from " + mColor + "Team #" + teamNumber + sColor + ".");
 
         if(game.getGameStateManager().getCurrentGameState() instanceof LobbyState) {
             game.getTeamNumber().put(uuid, -1);
@@ -86,7 +86,7 @@ public class TeamManager {
         for (Player allPlayers : Bukkit.getOnlinePlayers()) {
             if(game.getPlayers().contains(allPlayers.getUniqueId())) {
                 if(game.getTeamNumber().get(allPlayers.getUniqueId()) == teamNumber) {
-                    allPlayers.sendMessage(prefix + mColor + player.getName() + sColor + " were kicked from the team.");
+                    allPlayers.sendMessage(mColor + player.getName() + sColor + " were kicked from the team.");
                 }
             }
         }
