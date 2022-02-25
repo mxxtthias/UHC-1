@@ -85,14 +85,14 @@ public class GameManager {
 
             if(game.getGameStateManager().getCurrentGameState() instanceof IngameState) {
                 if(!player.hasPermission("uhc.host")) {
-                    player.sendMessage(prefix + ChatColor.YELLOW + "You are now spectating the game.");
+                    player.sendMessage(ChatColor.YELLOW + "You are now spectating the game.");
 
                     if(!game.getDeadPlayersByUUID().contains(player.getUniqueId())) {
                         if(game.isInGrace()) {
-                            player.sendMessage(prefix + ChatColor.YELLOW + "Late-scatter yourself with /latescatter.");
+                            player.sendMessage(ChatColor.YELLOW + "Late-scatter yourself with /latescatter.");
                         }
                     } else {
-                        player.sendMessage(prefix + ChatColor.RED + "You have already died this game.");
+                        player.sendMessage(ChatColor.RED + "You have already died this game.");
                     }
                 }
             }
@@ -265,7 +265,7 @@ public class GameManager {
 
                         OfflinePlayer allPlayers = Bukkit.getOfflinePlayer(players);
 
-                        Bukkit.broadcastMessage(prefix + mColor + "Congratulations to " + allPlayers.getName() + " for winning this game!");
+                        Bukkit.broadcastMessage(mColor + "Congratulations to " + allPlayers.getName() + " for winning this game!");
 
                         if(game.isDatabaseActive()) {
                             game.getDatabaseManager().addWins(allPlayers, 1);
@@ -283,7 +283,7 @@ public class GameManager {
                         }
                     }
 
-                    Bukkit.broadcastMessage(prefix + ChatColor.RED + "The server restarts in 1 minute!");
+                    Bukkit.broadcastMessage(ChatColor.RED + "The server restarts in 1 minute.");
 
                     new BukkitRunnable() {
                         @Override
@@ -324,10 +324,10 @@ public class GameManager {
 
                     String[] stringArray = winnerNames.toArray(new String[winnerNames.size()]);
 
-                    Bukkit.broadcastMessage(prefix + mColor + "Congratulations to " + Arrays.toString(stringArray).
+                    Bukkit.broadcastMessage(mColor + "Congratulations to " + Arrays.toString(stringArray).
                             replace("[", "").replace("]", "") + " for winning this game!");
 
-                    Bukkit.broadcastMessage(prefix + ChatColor.RED + "The server restarts in 1 minute!");
+                    Bukkit.broadcastMessage(ChatColor.RED + "The server restarts in 1 minute.");
 
                     new BukkitRunnable() {
                         @Override
@@ -354,13 +354,13 @@ public class GameManager {
             }
         }
         this.playSound();
-        Bukkit.broadcastMessage(prefix + mColor + "All players have been healed!");
+        Bukkit.broadcastMessage(mColor + "All players have been healed.");
     }
 
     public void endGracePeriod() {
         game.setInGrace(false);
         this.playSound();
-        Bukkit.broadcastMessage(prefix + mColor + "The grace period has ended!");
+        Bukkit.broadcastMessage(mColor + "The grace period has ended.");
     }
 
     public Player getRandomPlayer() {
