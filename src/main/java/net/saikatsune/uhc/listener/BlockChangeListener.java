@@ -94,7 +94,7 @@ public class BlockChangeListener implements Listener {
                 switch (event.getBlockPlaced().getType()) {
                     case FIRE:
                         event.setCancelled(true);
-                        player.sendMessage(prefix + ChatColor.RED + "You are not allowed to place or fire " +
+                        player.sendMessage(ChatColor.RED + "You are not allowed to place or fire " +
                                 "in grace period to prevent iPvP.");
                     break;
                 }
@@ -112,7 +112,7 @@ public class BlockChangeListener implements Listener {
             if(game.isInGrace()) {
                 event.setCancelled(true);
 
-                player.sendMessage(prefix + ChatColor.RED + "You are not allowed to place lava or fire " +
+                player.sendMessage(ChatColor.RED + "You are not allowed to place lava or fire " +
                         "in grace period to prevent iPvP.");
             }
         }
@@ -121,8 +121,8 @@ public class BlockChangeListener implements Listener {
     @EventHandler
     public void handleChunkLoadFinishEvent(WorldBorderFillFinishedEvent event) {
         if(!event.getWorld().getName().equalsIgnoreCase("uhc_practice")) {
-            Bukkit.broadcastMessage(prefix + sColor + "Finished loading the world " + mColor + event.getWorld().getName() + sColor + "!");
-            Bukkit.broadcastMessage(prefix + ChatColor.RED + "Restarting server in 10 seconds!");
+            Bukkit.broadcastMessage(sColor + "Finished loading the world " + mColor + event.getWorld().getName() + sColor + "!");
+            Bukkit.broadcastMessage(ChatColor.RED + "Restarting server in 10 seconds!");
 
             new BukkitRunnable() {
                 @Override
