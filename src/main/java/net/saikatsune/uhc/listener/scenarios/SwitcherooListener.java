@@ -39,10 +39,10 @@ public class SwitcherooListener implements Listener {
                                     newLocation.put(shot, shooter.getLocation());
 
                                     shooter.teleport(newLocation.get(shooter));
-                                    shooter.sendMessage(prefix + ChatColor.YELLOW + "You have switched places with " + shot.getName() + ".");
+                                    shooter.sendMessage(ChatColor.YELLOW + "You have switched places with " + shot.getName() + ".");
 
                                     shot.teleport(newLocation.get(shot));
-                                    shot.sendMessage(prefix + ChatColor.YELLOW + "You have switched places with " + shooter.getName() + ".");
+                                    shot.sendMessage(ChatColor.YELLOW + "You have switched places with " + shooter.getName() + ".");
                                 }
                             }
                         }
