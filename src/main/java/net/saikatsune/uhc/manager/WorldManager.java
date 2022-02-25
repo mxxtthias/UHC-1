@@ -26,23 +26,23 @@ public class WorldManager {
     private final FileHandler fileHandler = game.getFileHandler();
 
     public void createWorld(String worldName, World.Environment environment, WorldType worldType) {
-        Bukkit.broadcastMessage(prefix + sColor + "Started creating the world " + mColor + worldName + sColor + "...");
+        Bukkit.broadcastMessage(sColor + "Started creating the world " + mColor + worldName + sColor + "...");
         World world = Bukkit.createWorld(new WorldCreator(worldName).environment(environment).type(worldType));
         world.setDifficulty(Difficulty.EASY);
         world.setTime(0);
         world.setThundering(false);
         world.setGameRuleValue("naturalRegeneration", "false");
-        Bukkit.broadcastMessage(prefix + sColor + "Finished creating the world " + mColor + worldName + sColor + "!");
+        Bukkit.broadcastMessage(sColor + "Finished creating the world " + mColor + worldName + sColor + ".");
     }
 
     public void loadWorld(String worldName, int worldRadius, int loadingSpeed) {
-        Bukkit.broadcastMessage(prefix + sColor + "Started clearing the world " + mColor + worldName + sColor + "...");
+        Bukkit.broadcastMessage(sColor + "Started clearing the world " + mColor + worldName + sColor + "...");
         this.clearCenter(Bukkit.getWorld(worldName));
 
         new BukkitRunnable() {
             @Override
             public void run() {
-                Bukkit.broadcastMessage(prefix + sColor + "Started loading the world " + mColor + worldName + sColor + "...");
+                Bukkit.broadcastMessage(sColor + "Started loading the world " + mColor + worldName + sColor + "...");
                 Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), "wb shape square");
                 Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), "wb " + worldName + " set " + worldRadius + " " + worldRadius + " 0 0");
                 Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), "wb " + worldName + " fill " + loadingSpeed + " 208 false");
@@ -88,9 +88,9 @@ public class WorldManager {
                     } else {
                         this.cancel();
                         if (y == 149) {
-                            Bukkit.broadcastMessage(prefix + sColor + "Finished clearing " + mColor + world.getName() + " " + sColor +
+                            Bukkit.broadcastMessage(sColor + "Finished clearing " + mColor + world.getName() + " " + sColor +
                                     "by changing " + mColor + blocks + sColor + " blocks.");
-                            Bukkit.broadcastMessage(prefix + sColor + "Started patching " + mColor + world.getName() + sColor + ".");
+                            Bukkit.broadcastMessage(sColor + "Started patching " + mColor + world.getName() + sColor + ".");
                             for (int x = min.getBlockX(); x <= max.getBlockX(); x++) {
                                 for (int z = min.getBlockZ(); z <= max.getBlockZ(); z++) {
                                     Block bl = Bukkit.getWorld("uhc_world").getHighestBlockAt(x, z);
@@ -112,7 +112,7 @@ public class WorldManager {
                                             this.cancel();
                                             if (y == 149) {
                                                 this.cancel();
-                                                Bukkit.broadcastMessage(prefix + sColor + "Finished patching " + mColor + world.getName() + sColor + " by changing " +
+                                                Bukkit.broadcastMessage(sColor + "Finished patching " + mColor + world.getName() + sColor + " by changing " +
                                                        mColor + blocks2 + sColor + " blocks.");
                                             }
                                         }
@@ -225,11 +225,11 @@ public class WorldManager {
             game.getWorldManager().shrinkBorder("uhc_nether", 25);
         }
         game.getGameManager().playSound();
-        Bukkit.broadcastMessage(prefix + sColor + "The border has shrunk to " + mColor + game.getConfigManager().getBorderSize() + "x" +
-                game.getConfigManager().getBorderSize() + sColor + " blocks!");
+        Bukkit.broadcastMessage("§7[§b§lBorder§7] " + sColor + "The border has shrunk to " + mColor + game.getConfigManager().getBorderSize() + "x" +
+                game.getConfigManager().getBorderSize() + sColor + " blocks" + sColor + ".");
         if(game.getConfigManager().getBorderSize() > 25) {
-            Bukkit.broadcastMessage(prefix + sColor + "The border is going to shrink to " + game.getTimeTask().getNextBorder() + "x" +
-                    game.getTimeTask().getNextBorder() + " blocks in 5 minutes!");
+            Bukkit.broadcastMessage("§7[§b§lBorder§7] " + sColor + "The border is going to shrink to " + mColor + game.getTimeTask().getNextBorder() + "x" +
+                    game.getTimeTask().getNextBorder() + " blocks" + sColor + " in " + mColor + "5 minutes" + sColor + ".");
         }
     }
 
@@ -323,10 +323,10 @@ public class WorldManager {
     }
 
     public void deleteWorld(String worldName) {
-        Bukkit.broadcastMessage(prefix + sColor + "Started deleting the world " + mColor + worldName + sColor + "...");
+        Bukkit.broadcastMessage(sColor + "Started deleting the world " + mColor + worldName + sColor + "...");
         this.unloadWorld(Bukkit.getWorld(worldName));
         fileHandler.deleteFiles(new File(Bukkit.getWorldContainer(), worldName));
-        Bukkit.broadcastMessage(prefix + sColor + "Finished deleting the world " + mColor + worldName + sColor + "!");
+        Bukkit.broadcastMessage(sColor + "Finished deleting the world " + mColor + worldName + sColor + "!");
     }
 
 }
