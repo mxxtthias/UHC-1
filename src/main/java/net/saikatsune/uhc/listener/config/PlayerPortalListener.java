@@ -22,7 +22,7 @@ public class PlayerPortalListener implements Listener {
 
         if(!game.getConfigManager().isNether()) {
             event.setCancelled(true);
-            player.sendMessage(prefix + ChatColor.RED + "Nether is currently disabled!");
+            player.sendMessage(ChatColor.RED + "Nether is currently disabled!");
         } else {
             if(!game.getSpectators().contains(player)) {
                 if(event.getCause() == PlayerTeleportEvent.TeleportCause.NETHER_PORTAL) {
@@ -47,7 +47,7 @@ public class PlayerPortalListener implements Listener {
                 }
             } else {
                 event.setCancelled(true);
-                player.sendMessage(prefix + ChatColor.RED + "You cannot access the nether as spectator.");
+                player.sendMessage(ChatColor.RED + "You cannot access the nether as spectator.");
             }
         }
     }
