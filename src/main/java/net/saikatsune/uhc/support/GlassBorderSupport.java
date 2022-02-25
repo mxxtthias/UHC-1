@@ -49,7 +49,7 @@ public class GlassBorderSupport implements Listener {
             if (Math.abs(to.getBlockX()) > game.getConfigManager().getBorderSize() || Math.abs(to.getBlockZ())
                     > game.getConfigManager().getBorderSize()) {
                 event.setCancelled(true);
-                event.getPlayer().sendMessage(prefix + ChatColor.RED + "You can't pearl to outside of the border.");
+                event.getPlayer().sendMessage("§7[§b§lBorder§7] " + ChatColor.RED + "You can't pearl to outside of the border.");
                 return;
             }
             handlePlayerMovement(event);
