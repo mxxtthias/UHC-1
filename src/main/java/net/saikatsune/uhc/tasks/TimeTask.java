@@ -77,7 +77,7 @@ public class TimeTask {
                     if (uptimeSeconds == 0) {
                         if(game.isChatMuted()) {
                             game.setChatMuted(false);
-                            Bukkit.broadcastMessage(prefix + mColor + "Global Chat " + sColor + "has been " + ChatColor.GREEN + "enabled" + sColor + ".");
+                            Bukkit.broadcastMessage(mColor + "Global Chat " + sColor + "has been " + ChatColor.GREEN + "enabled" + sColor + ".");
                         }
 
                         if(!game.isFinalHealHappened()) {
@@ -97,7 +97,7 @@ public class TimeTask {
 
                 if (borderMinutes == game.getConfigManager().getBorderTime() - 5) {
                     if (uptimeSeconds == 0) {
-                        Bukkit.broadcastMessage(prefix + sColor + "The border is going to shrink by 500 blocks every 5 minutes now!");
+                        Bukkit.broadcastMessage(sColor + "The border is going to shrink by 500 blocks every 5 minutes now!");
                         game.getGameManager().playSound();
 
                         World uhcWorld = Bukkit.getWorld("uhc_world");
@@ -105,7 +105,7 @@ public class TimeTask {
                         uhcWorld.setTime(0);
                         uhcWorld.setGameRuleValue("doDaylightCycle", "false");
 
-                        Bukkit.broadcastMessage(prefix + sColor + "Permanent day is now active.");
+                        Bukkit.broadcastMessage(sColor + "Permanent day is now active.");
                     }
                 }
 
@@ -126,63 +126,63 @@ public class TimeTask {
                         switch (uptimeSeconds) {
                             case 30:
                                 game.getGameManager().playSound();
-                                Bukkit.broadcastMessage(prefix + sColor + "The border is going to shrink to " + getNextBorder() + "x" + getNextBorder() +
-                                        " blocks in 30 seconds!");
+                                Bukkit.broadcastMessage("§7[§b§lBorder§7] " + sColor + "The border is going to shrink to " + mColor + getNextBorder() + "x" + getNextBorder() +
+                                        " blocks" + sColor + " in " + mColor + "30 seconds" + sColor + ".");
                                 break;
                             case 40:
                                 game.getGameManager().playSound();
-                                Bukkit.broadcastMessage(prefix + sColor + "The border is going to shrink to " + getNextBorder() + "x" + getNextBorder() +
-                                        " blocks in 20 seconds!");
+                                Bukkit.broadcastMessage("§7[§b§lBorder§7] " + sColor + "The border is going to shrink to " + mColor + getNextBorder() + "x" + getNextBorder() +
+                                        " blocks" + sColor + " in " + mColor + "20 seconds" + sColor + ".");
                                 break;
                             case 50:
                                 game.getGameManager().playSound();
-                                Bukkit.broadcastMessage(prefix + sColor + "The border is going to shrink to " + getNextBorder() + "x" + getNextBorder() +
-                                        " blocks in 10 seconds!");
+                                Bukkit.broadcastMessage("§7[§b§lBorder§7] " + sColor + "The border is going to shrink to " + mColor + getNextBorder() + "x" + getNextBorder() +
+                                        " blocks" + sColor + " in " + mColor + "10 seconds" + sColor + ".");
                                 break;
                             case 51:
                                 game.getGameManager().playSound();
-                                Bukkit.broadcastMessage(prefix + sColor + "The border is going to shrink to " + getNextBorder() + "x" + getNextBorder() +
-                                        " blocks in 9 seconds!");
+                                Bukkit.broadcastMessage("§7[§b§lBorder§7] " + sColor + "The border is going to shrink to " + mColor + getNextBorder() + "x" + getNextBorder() +
+                                        " blocks" + sColor + " in " + mColor + "9 seconds" + sColor + ".");
                                 break;
                             case 52:
                                 game.getGameManager().playSound();
-                                Bukkit.broadcastMessage(prefix + sColor + "The border is going to shrink to " + getNextBorder() + "x" + getNextBorder() +
-                                        " blocks in 8 seconds!");
+                                Bukkit.broadcastMessage("§7[§b§lBorder§7] " + sColor + "The border is going to shrink to " + mColor + getNextBorder() + "x" + getNextBorder() +
+                                        " blocks" + sColor + " in " + mColor + "8 seconds" + sColor + ".");
                                 break;
                             case 53:
                                 game.getGameManager().playSound();
-                                Bukkit.broadcastMessage(prefix + sColor + "The border is going to shrink to " + getNextBorder() + "x" + getNextBorder() +
-                                        " blocks in 7 seconds!");
+                                Bukkit.broadcastMessage("§7[§b§lBorder§7] " + sColor + "The border is going to shrink to " + mColor + getNextBorder() + "x" + getNextBorder() +
+                                        " blocks" + sColor + " in " + mColor + "7 seconds" + sColor + "."");
                                 break;
                             case 54:
                                 game.getGameManager().playSound();
-                                Bukkit.broadcastMessage(prefix + sColor + "The border is going to shrink to " + getNextBorder() + "x" + getNextBorder() +
-                                        " blocks in 6 seconds!");
+                                Bukkit.broadcastMessage("§7[§b§lBorder§7] " + sColor + "The border is going to shrink to " + mColor + getNextBorder() + "x" + getNextBorder() +
+                                        " blocks" + sColor + " in " + mColor + "6 seconds" + sColor + ".");
                                 break;
                             case 55:
                                 game.getGameManager().playSound();
-                                Bukkit.broadcastMessage(prefix + sColor + "The border is going to shrink to " + getNextBorder() + "x" + getNextBorder() +
-                                        " blocks in 5 seconds!");
+                                Bukkit.broadcastMessage("§7[§b§lBorder§7] " + sColor + "The border is going to shrink to " + mColor + getNextBorder() + "x" + getNextBorder() +
+                                        " blocks" + sColor + " in " + mColor + "5 seconds" + sColor + ".");
                                 break;
                             case 56:
                                 game.getGameManager().playSound();
-                                Bukkit.broadcastMessage(prefix + sColor + "The border is going to shrink to " + getNextBorder() + "x" + getNextBorder() +
-                                        " blocks in 4 seconds!");
+                                Bukkit.broadcastMessage("§7[§b§lBorder§7] " + sColor + "The border is going to shrink to " + mColor + getNextBorder() + "x" + getNextBorder() +
+                                        " blocks" + sColor + " in " + mColor + "4 seconds" + sColor + ".");
                                 break;
                             case 57:
                                 game.getGameManager().playSound();
-                                Bukkit.broadcastMessage(prefix + sColor + "The border is going to shrink to " + getNextBorder() + "x" + getNextBorder() +
-                                        " blocks in 3 seconds!");
+                                Bukkit.broadcastMessage("§7[§b§lBorder§7] " + sColor + "The border is going to shrink to " + mColor + getNextBorder() + "x" + getNextBorder() +
+                                        " blocks" + sColor + " in " + mColor + "3 seconds" + sColor + ".");
                                 break;
                             case 58:
                                 game.getGameManager().playSound();
-                                Bukkit.broadcastMessage(prefix + sColor + "The border is going to shrink to " + getNextBorder() + "x" + getNextBorder() +
-                                        " blocks in 2 seconds!");
+                                Bukkit.broadcastMessage("§7[§b§lBorder§7] " + sColor + "The border is going to shrink to " + mColor + getNextBorder() + "x" + getNextBorder() +
+                                        " blocks" + sColor + " in " + mColor + "2 seconds" + sColor + ".");
                                 break;
                             case 59:
                                 game.getGameManager().playSound();
-                                Bukkit.broadcastMessage(prefix + sColor + "The border is going to shrink to " + getNextBorder() + "x" + getNextBorder() +
-                                        " blocks in 1 second!");
+                                Bukkit.broadcastMessage("§7[§b§lBorder§7] " + sColor + "The border is going to shrink to " + mColor + getNextBorder() + "x" + getNextBorder() +
+                                        " blocks" + sColor + " in " + mColor + "1 second" + sColor + ".");
                                 break;
                         }
                     }
