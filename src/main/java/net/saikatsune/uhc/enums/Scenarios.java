@@ -71,7 +71,7 @@ public enum Scenarios {
         this.enabled = enabled;
 
         if(enabled) {
-            Bukkit.broadcastMessage(prefix + mColor + scenarioItem.getItemMeta().getDisplayName() + sColor + " has been " + ChatColor.GREEN + "enabled" + sColor + ".");
+            Bukkit.broadcastMessage(mColor + scenarioItem.getItemMeta().getDisplayName() + sColor + " has been " + ChatColor.GREEN + "enabled" + sColor + ".");
 
             if(scenarioItem.getItemMeta().getDisplayName().contains("BestPVE")) {
                 if(game.getGameStateManager().getCurrentGameState() instanceof IngameState) {
@@ -84,14 +84,14 @@ public enum Scenarios {
                             if(allPlayers != null) {
                                 Player allOnlinePlayers = Bukkit.getPlayer(allPlayers);
 
-                                allOnlinePlayers.sendMessage(prefix + ChatColor.GREEN + "You have been added to the BestPVE list.");
+                                allOnlinePlayers.sendMessage(ChatColor.GREEN + "You have been added to the BestPVE list.");
                             }
                         }
                     }
                 }
             }
         } else {
-            Bukkit.broadcastMessage(prefix + mColor + scenarioItem.getItemMeta().getDisplayName() + sColor + " has been " + ChatColor.RED + "disabled" + sColor + ".");
+            Bukkit.broadcastMessage(mColor + scenarioItem.getItemMeta().getDisplayName() + sColor + " has been " + ChatColor.RED + "disabled" + sColor + ".");
 
             if(scenarioItem.getItemMeta().getDisplayName().contains("BestPVE")) {
                 if(game.getGameStateManager().getCurrentGameState() instanceof IngameState) {
