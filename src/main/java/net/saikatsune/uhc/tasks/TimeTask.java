@@ -97,7 +97,7 @@ public class TimeTask {
 
                 if (borderMinutes == game.getConfigManager().getBorderTime() - 5) {
                     if (uptimeSeconds == 0) {
-                        Bukkit.broadcastMessage(sColor + "The border is going to shrink by 500 blocks every 5 minutes now!");
+                        Bukkit.broadcastMessage("§7[§b§lBorder§7] " + sColor + "The border is going to shrink by" + mColor + " 500 blocks " + sColor + "every " + mColor + "5 minutes " + sColor + "now.");
                         game.getGameManager().playSound();
 
                         World uhcWorld = Bukkit.getWorld("uhc_world");
@@ -152,7 +152,7 @@ public class TimeTask {
                             case 53:
                                 game.getGameManager().playSound();
                                 Bukkit.broadcastMessage("§7[§b§lBorder§7] " + sColor + "The border is going to shrink to " + mColor + getNextBorder() + "x" + getNextBorder() +
-                                        " blocks" + sColor + " in " + mColor + "7 seconds" + sColor + "."");
+                                        " blocks" + sColor + " in " + mColor + "7 seconds" + sColor + ".");
                                 break;
                             case 54:
                                 game.getGameManager().playSound();
