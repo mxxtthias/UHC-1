@@ -36,8 +36,7 @@ public class RelogTask {
                                 game.getGameManager().dropPlayerDeathInventory(offlinePlayer.getUniqueId());
 
                                 game.getDeathLocation().get(offlinePlayer.getUniqueId()).getWorld().dropItem(
-                                        game.getDeathLocation().get(offlinePlayer.getUniqueId()), new ItemHandler(Material.GOLDEN_APPLE).setDisplayName(
-                                                ChatColor.GOLD + "Golden Head").build());
+                                        game.getDeathLocation().get(offlinePlayer.getUniqueId()), new ItemHandler(Material.GOLDEN_APPLE).setDisplayName("§6§lGolden Head").build());
 
                                 if(Scenarios.BleedingSweets.isEnabled()) {
                                     game.getDeathLocation().get(offlinePlayer.getUniqueId()).getWorld().dropItemNaturally(
