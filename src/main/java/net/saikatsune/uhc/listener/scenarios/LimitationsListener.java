@@ -37,7 +37,7 @@ public class LimitationsListener implements Listener {
                 } else if(diamondsMined.get(player.getUniqueId()) == 16) {
                     event.setCancelled(true);
                     event.getBlock().setType(Material.AIR);
-                    player.sendMessage(prefix + ChatColor.RED + "You can only mine 16 diamonds!");
+                    player.sendMessage(ChatColor.RED + "You can only mine 16 diamonds!");
                 }
             }
 
@@ -47,7 +47,7 @@ public class LimitationsListener implements Listener {
                 } else if(goldMined.get(player.getUniqueId()) == 32) {
                     event.setCancelled(true);
                     event.getBlock().setType(Material.AIR);
-                    player.sendMessage(prefix + ChatColor.RED + "You can only mine 32 gold!");
+                    player.sendMessage(ChatColor.RED + "You can only mine 32 gold!");
                 }
             }
 
@@ -57,7 +57,7 @@ public class LimitationsListener implements Listener {
                 } else if(ironMined.get(player.getUniqueId()) == 64) {
                     event.setCancelled(true);
                     event.getBlock().setType(Material.AIR);
-                    player.sendMessage(prefix + ChatColor.RED + "You can only mine 64 iron!");
+                    player.sendMessage(ChatColor.RED + "You can only mine 64 iron!");
                 }
             }
         }
