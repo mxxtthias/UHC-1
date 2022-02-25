@@ -35,7 +35,7 @@ public class TimebombListener implements Listener {
                 new TimeBomb(player.getName(), player.getLocation(), player.getLevel() * 10, player.getInventory().getContents(), player.getInventory().getArmorContents(), game);
             } else {
                 if(!Scenarios.SafeLoot.isEnabled()) {
-                    player.getWorld().dropItemNaturally(player.getLocation(), new ItemHandler(Material.GOLDEN_APPLE).setDisplayName(ChatColor.GOLD + "Golden Head").build());
+                    player.getWorld().dropItemNaturally(player.getLocation(), new ItemHandler(Material.GOLDEN_APPLE).setDisplayName("§6§lGolden Head").build());
 
                     if(Scenarios.Barebones.isEnabled()) {
                         player.getWorld().dropItemNaturally(player.getLocation(), new ItemStack(Material.DIAMOND));
@@ -75,7 +75,7 @@ public class TimebombListener implements Listener {
                 }
             }
 
-            chest.getInventory().addItem(new ItemHandler(Material.GOLDEN_APPLE).setDisplayName(ChatColor.GOLD + "Golden Head").build());
+            chest.getInventory().addItem(new ItemHandler(Material.GOLDEN_APPLE).setDisplayName("§6§lGolden Head").build());
 
             for (ItemStack stack : inv) {
                 if ((stack != null) && (stack.getType() != Material.AIR)) {
@@ -117,7 +117,7 @@ public class TimebombListener implements Listener {
                             location.getWorld().strikeLightning(location);
                             this.cancel();
 
-                            Bukkit.broadcastMessage(game.getPrefix() + mColor + "[TimeBomb] " + name + "'s " + sColor + "corpse has exploded.");
+                            Bukkit.broadcastMessage(mColor + "[TimeBomb] " + name + "'s " + sColor + "corpse has exploded.");
                             return;
                         }
 
@@ -138,7 +138,7 @@ public class TimebombListener implements Listener {
                     public void run() {
                         location.getWorld().createExplosion(location, 10.0F);
                         location.getWorld().strikeLightning(location);
-                        Bukkit.broadcastMessage(game.getPrefix() + mColor + "[TimeBomb] " + name + "'s " + sColor + "corpse has exploded.");
+                        Bukkit.broadcastMessage(mColor + "[TimeBomb] " + name + "'s " + sColor + "corpse has exploded.");
                     }
                 }.runTaskLater(game, 30 * 20);
             }
