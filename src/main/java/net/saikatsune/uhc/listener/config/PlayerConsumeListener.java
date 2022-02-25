@@ -48,7 +48,7 @@ public class PlayerConsumeListener implements Listener {
         } else if ((event.getItem().getType() != null) &&
                 (event.getItem().getType() == Material.GOLDEN_APPLE) &&
                 (event.getItem().getItemMeta().getDisplayName() != null) &&
-                (event.getItem().getItemMeta().getDisplayName().equals(ChatColor.GOLD + "Golden Head"))) {
+                (event.getItem().getItemMeta().getDisplayName().equals("§6§lGolden Head"))) {
             player.removePotionEffect(PotionEffectType.REGENERATION);
             player.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 200, 1));
         } else if ((event.getItem().getType() != null) &&
