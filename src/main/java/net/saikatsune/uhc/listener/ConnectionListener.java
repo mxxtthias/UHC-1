@@ -36,8 +36,8 @@ public class ConnectionListener implements Listener {
             try {
                 player.teleport(game.getLocationManager().getLocation("Spawn-Location"));
             } catch (Exception exception) {
-                player.sendMessage(game.getPrefix() + ChatColor.RED + "There is no spawn-location set yet.");
-                player.sendMessage(game.getPrefix() + ChatColor.RED + "Use /setup to set it. It is needed to work properly.");
+                player.sendMessage(ChatColor.RED + "There is no spawn-location set yet.");
+                player.sendMessage(ChatColor.RED + "Use /setup to set it. It is needed to work properly.");
             }
 
             game.getInventoryHandler().handleLobbyInventory(player);
