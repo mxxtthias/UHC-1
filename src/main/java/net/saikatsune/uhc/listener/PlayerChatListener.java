@@ -26,7 +26,7 @@ public class PlayerChatListener implements Listener {
         if(game.isChatMuted()) {
             if(!player.hasPermission("uhc.host")) {
                 event.setCancelled(true);
-                player.sendMessage(prefix + ChatColor.RED + "Global Chat is currently disabled!");
+                player.sendMessage(ChatColor.RED + "Global Chat is currently disabled.");
             }
         }
 
@@ -44,7 +44,7 @@ public class PlayerChatListener implements Listener {
                             } else {
                                 if(!player.hasPermission("uhc.host")) {
                                     event.setCancelled(true);
-                                    player.sendMessage(prefix + ChatColor.RED + "Global Chat is currently disabled!");
+                                    player.sendMessage(ChatColor.RED + "Global Chat is currently disabled.");
                                 } else {
                                     event.setFormat(teamPrefix + ChatColor.WHITE + event.getFormat());
                                 }
