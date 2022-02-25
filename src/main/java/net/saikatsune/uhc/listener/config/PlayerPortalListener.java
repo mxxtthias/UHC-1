@@ -22,7 +22,7 @@ public class PlayerPortalListener implements Listener {
 
         if(!game.getConfigManager().isNether()) {
             event.setCancelled(true);
-            player.sendMessage(ChatColor.RED + "Nether is currently disabled!");
+            player.sendMessage(ChatColor.RED + "Nether is currently disabled.");
         } else {
             if(!game.getSpectators().contains(player)) {
                 if(event.getCause() == PlayerTeleportEvent.TeleportCause.NETHER_PORTAL) {
