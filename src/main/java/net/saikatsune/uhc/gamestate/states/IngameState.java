@@ -33,7 +33,7 @@ public class IngameState extends GameState {
         game.getTimeTask().runTask();
 
         if(Scenarios.CutClean.isEnabled()) {
-            Bukkit.broadcastMessage(prefix + ChatColor.YELLOW + "Remember: Sheep also drop leather.");
+            Bukkit.broadcastMessage(ChatColor.YELLOW + "Remember: Sheep also drop leather.");
         }
 
         game.getButcherTask().run();
@@ -52,7 +52,7 @@ public class IngameState extends GameState {
                 if(allPlayers != null) {
                     Player allOnlinePlayers = Bukkit.getPlayer(allPlayers);
 
-                    allOnlinePlayers.sendMessage(prefix + ChatColor.GREEN + "You have been added to the BestPVE list.");
+                    allOnlinePlayers.sendMessage(ChatColor.GREEN + "You have been added to the BestPVE list.");
                 }
             }
         }
